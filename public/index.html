@@ -37,7 +37,10 @@
 
     // 전체 컴포넌트
     /*
-    
+    input을 formContent로 합성하여 formComponent로 만드는 작업을 하고
+    그것을 리턴한다.
+    component의 매개변수는 value의 값을 넣어주는 역할을 하는 것 뿐
+    의의는 form섹션을 inputComponent에서 받아서 가공하고 return하는 것이다.
     */
     const component = (name,age,job) => {
       let obj = {
@@ -58,8 +61,6 @@
         ${formComponent("/submit",'post',formContent)}
       `;
     };
-
-    console.log(component("김정수",29,"백수"))
 
     function renderApp() {
 
