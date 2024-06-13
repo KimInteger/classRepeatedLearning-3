@@ -63,7 +63,25 @@
     };
 
     function renderApp() {
+      const root = document.getElementById('root');
+      root.innerHTML = component("김정수",29,'네오플직원이될거야~');
+      // 다음의 코드로 문서가 작성되었다.
+      // 인터프리터의 특징.
+      //그렇기에 button의 아이디를 잡을 수 있다.
 
+      const submitButton = document.getElementById('submit-button');
+
+      submitButton.addEventListener('click',()=>{
+        const form = document.getElementById('user-form');
+        const formData = new FormData(form);
+        console.dir(formData);
+        // class 생성자함수를 호출 => FormData라는 API가 있나보다.
+        const data = {};
+        formData.forEach((value,key)=>{
+          data[key] = value;
+        });
+        console.log(data);
+      });
     };
 
     window.addEventListener("DOMContentLoaded", renderApp);
