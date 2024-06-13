@@ -3,9 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>무궁무진한 컴포넌트 응용</title>
 </head>
 <body>
-  
+  <div id="root"></div>
+  <script>
+    // Form 컴포넌트
+    /*
+    리턴을 보자, form 섹션을 반환한다.
+    추가로 받아야할 것은 form섹션의 content이다.
+    완성된 html의 main혹은 body부분에 추가될 내용이라고 추측
+    */
+    const formComponent = (action, method, content) => {
+      return `
+        <form action="${action}" method="${method}" id="user-form">
+          ${content}
+          <button type="button" id="submit-button">콘솔확인하기!</button>
+        </form>
+      `;
+    };
+
+    // Input 컴포넌트
+    /*
+    Form컴포넌트의 content에 삽입될 내용을 return해주는 함수.
+    매개변수로 value는 없어도 될 것 같은데? 굳이 넣는다면 placeholder를 넣는게 좋아보인다.
+    */
+    const inputComponent = (label, id, name, value) => {
+      return `
+        <label for="${id}">${label}:</label>
+        <input type="text" id="${id}" name="${name}" value="${value}" required>
+      `;
+    };
+
+    const component = () => {
+
+    };
+
+    function renderApp() {
+
+    };
+
+    window.addEventListener("DOMContentLoaded", renderApp);
+  </script>
 </body>
 </html>
